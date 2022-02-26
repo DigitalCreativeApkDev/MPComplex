@@ -81,6 +81,24 @@ class MyTestCase(unittest.TestCase):
         c: MPComplex = a / b
         self.assertEquals(c, MPComplex(-1, -1))
 
+    def test_floordiv_01(self):
+        a: MPComplex = MPComplex(7, 3)
+        b: MPComplex = MPComplex(2, 5)
+        c: MPComplex = a // b
+        self.assertEquals(c, MPComplex(1, 0))
+
+    def test_floordiv_02(self):
+        a: MPComplex = MPComplex(-7, 3)
+        b: MPComplex = MPComplex(-2, 5)
+        c: MPComplex = a // b
+        self.assertEquals(c, MPComplex(1, 0))
+
+    def test_floordiv_03(self):
+        a: MPComplex = MPComplex(7, -3)
+        b: MPComplex = MPComplex(-2, 5)
+        c: MPComplex = a // b
+        self.assertEquals(c, MPComplex(-1, 0))
+
     def test_div_04(self):
         a: MPComplex = MPComplex(3, -3)
         b: mpf = mpf("5")

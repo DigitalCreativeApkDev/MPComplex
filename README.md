@@ -28,6 +28,11 @@ Output: MPComplex(-4, 46)
 Input: MPComplex(5, 4) / MPComplex(4, 6)
 Output: MPComplex(0.846153846153846, -0.269230769230769)
 
+## Integer Division
+
+Input: MPComplex(5, 4) // MPComplex(4, 6)
+Output: MPComplex(0, 0)
+
 ## Power
 
 Input: MPComplex(4, 2) ** 5

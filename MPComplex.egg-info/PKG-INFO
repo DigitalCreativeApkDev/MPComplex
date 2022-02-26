@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: MPComplex
-Version: 1
+Version: 1.1
 Summary: This package contains implementation of the library "MPComplex". MPComplex is a data type supporting complex numbers which allow comparison and sorting operations.
 Home-page: https://github.com/DigitalCreativeApkDev/MPComplex
 Author: DigitalCreativeApkDev
@@ -35,6 +35,11 @@ Description: # MPComplex
         
         Input: MPComplex(5, 4) / MPComplex(4, 6)
         Output: MPComplex(0.846153846153846, -0.269230769230769)
+        
+        ## Integer Division
+        
+        Input: MPComplex(5, 4) // MPComplex(4, 6)
+        Output: MPComplex(0, 0)
         
         ## Power
         

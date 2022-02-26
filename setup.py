@@ -9,7 +9,7 @@ def readme():
 
 setup(
     name='MPComplex',
-    version='1',
+    version='1.1',
     packages=['MPComplex'],
     url='https://github.com/DigitalCreativeApkDev/MPComplex',
     license='MIT',

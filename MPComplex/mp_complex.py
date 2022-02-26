@@ -7,7 +7,7 @@ Author: DigitalCreativeApkDev
 # Importing necessary libraries
 import copy
 
-from mpmath import mp, mpf
+from mpmath import *
 mp.pretty = True
 
 
@@ -37,7 +37,7 @@ class MPComplex:
         if isinstance(other, MPComplex):
             return MPComplex(self.real_part + other.real_part, self.imaginary_part + other.imaginary_part)
         elif is_number(other):
-            return MPComplex(self.real_part + other, self.imaginary_part)
+            return MPComplex(self.real_part + mpf(other), self.imaginary_part)
         else:
             raise TypeError("Unsupported operand type '+' for type 'MPComplex' with '" +
                             str(type(other)) + "'!")
@@ -93,6 +93,18 @@ class MPComplex:
             return MPComplex(self.real_part / mpf(other), self.imaginary_part / mpf(other))
         else:
             raise TypeError("Unsupported operand type '/' for type 'MPComplex' with '" +
+                            str(type(other)) + "'!")
+
+    def __floordiv__(self, other):
+        # type: (object) -> MPComplex
+        if isinstance(other, MPComplex):
+            first: MPComplex = self.__mul__(other.conjugate())
+            second: MPComplex = other.__mul__(other.conjugate())
+            return MPComplex(floor(first.real_part / second.real_part), mpf("0"))
+        elif is_number(other):
+            return MPComplex(floor(self.real_part / mpf(other)), mpf("0"))
+        else:
+            raise TypeError("Unsupported operand type '//' for type 'MPComplex' with '" +
                             str(type(other)) + "'!")
 
     def __gt__(self, other):
